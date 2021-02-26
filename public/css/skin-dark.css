@@ -1,0 +1,15 @@
+/* HOME PAGE */
+
+.bg_home{
+    background-image: url(../images/bg_home_dark.webp);
+    background-size: cover;
+    width: 100vw;
+    background-color: #003755;
+    background-repeat: no-repeat;
+    color: white!important;
+}
+
+.nav-link{
+    color: white!important;
+    font-weight: 700;
+}

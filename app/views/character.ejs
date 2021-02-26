@@ -1,0 +1,180 @@
+<%- include('partials/header') %>
+<div>
+    <div class="soleil" id="soleil"></div>
+</div>
+<div id="background" class="background"></div>
+<div id="fbackground" class="fbackground"></div>
+ <!-- Start of main content -->
+ <main class="container_character" uk-filter="target: .js-filter">
+    <section class="characters-left">
+        <nav class="breadcrumb-content" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="/">Accueil</a></li>
+              <li class="breadcrumb-item"><a href="/characters">Liste des personnages</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Harry Potter</li>
+            </ol>
+          </nav>
+          <article class="content-character">
+            <h2 class="h2_title"><%= character.firstname %> <%= character.lastname %></h2>
+            <h3>Informations générales</h3>
+                    <div class="zone-description">
+                        <p class="description-characters-underline">Nom complet :</p>
+                        <p class="texte"><%= character.firstname %> <%= character.lastname %></p>
+                    </div>
+
+                    <div class="zone-description">
+                        <p class="description-characters-underline">Ecole :</p>
+                        <p class="texte">Poudlard <img src="/images/poudlard.png" alt="Blason de l'école Poudlard"></p>
+                    </div>
+
+                    <div class="zone-description">
+                        <p class="description-characters-underline">Maison :</p>
+                        <p class="texte"><%= character.maison %> <img src="/images/<%= character.maison %>-small.png" alt="Blason de la maison <%= character.maison %>"></p>
+                    </div></p>
+                    </div>
+
+                    <div class="zone-description">
+                    <p class="description-characters-underline">Pourquoi ce nom?</p>
+                    <p class="texte"><%= character.why_this_name %></p>
+                </div>
+
+
+
+                    <div class="zone-description">
+                    <p class="description-characters-underline">Date de naissance :</p>
+                    <p class="texte"><%= character.birthday %></p>
+                </div>
+
+
+                    <div class="zone-description">
+                    <p class="description-characters-underline">Décès :</p>
+                    <p class="texte"><%= character.deathday %> : <%= character.cause_deces %></p>
+                </div>
+
+
+                    <div class="zone-description">
+                    <p class="description-characters-underline">Surnoms :</p>
+                    <p class="texte"><%= character.surnom %></p>
+                </div>
+                
+                    <h3>Famille, amis, etc...</h3>
+
+                    <div class="zone-description">
+                    <p class="description-characters-underline">Père :</p>
+                    <p class="texte"><%= character.father_name %></p>
+                </div>
+
+
+                <div class="zone-description">
+                    <p class="description-characters-underline">Mère :</p>
+                    <p class="texte"><%= character.mother_name %></p>
+                </div>
+                <!-- 
+                    <p class="description-characters-underline">Grands-parents</p>
+                    <p class="texte">Mr & Mme Potter, Mr & Mme Evans</p>
+                 -->
+                 <div class="zone-description">
+                    <p class="description-characters-underline">Oncles/Tantes</p>
+                    <p class="texte"><%= character.oncle_tante %></p>
+                </div>
+
+
+                    <div class="zone-description">
+                    <p class="description-characters-underline">Frères/Soeurs :</p>
+                    <p class="texte"><%= character.brother_sister %></p>
+                </div>
+
+
+                    <div class="zone-description">
+                    <p class="description-characters-underline">Cousins et cousines :</p>
+                    <p class="texte"><%= character.cousin %></p>
+                </div>
+
+
+
+                    <div class="zone-description">
+                    <p class="description-characters-underline">Époux/Épouse :</p>
+                    <p class="texte"><%= character.married %></p>
+                </div>
+
+
+
+
+                    <div class="zone-description">
+                    <p class="description-characters-underline">Enfants :</p>
+                    <p class="texte"><%= character.child %></p>
+                </div>
+
+
+
+                    <div class="zone-description">
+                    <p class="description-characters-underline">Neveux/Nièces :</p>
+                    <p class="texte"><%= character.neveu %></p>
+                </div>
+
+
+
+                    <div class="zone-description">
+                    <p class="description-characters-underline">Beaux-frères/Belles-sœurs :</p>
+                    <p class="texte"><%= character.beau_frere %></p>
+                </div>
+
+
+                    <div class="zone-description">
+                    <p class="description-characters-underline">Autre famille :</p>
+                    <p class="texte"><%= character.other_family %></p>
+                </div>
+
+
+                   
+                    <div class="zone-description">
+                    <p class="description-characters-underline">Animaux de compagnie :</p>
+                    <p class="texte"><%= character.animal %></p>
+                </div>
+
+
+                    <div class="zone-description">
+                    <p class="description-characters-underline">Domicile :</p>
+                    <p class="texte"><%= character.home %></p>
+                </div>
+<!-- 
+
+                    <div class="zone-description">
+                    <p class="description-characters-underline">Organistaions :</p>
+                    <p class="texte">Armée de Dumbledore, équipe de Quidditch de Gryffondor, Club de Slug, Ordre du Phénix, ministère de la Magie.</p>
+                </div> -->
+                
+                    
+
+                    <div class="zone-description">
+                    <p class="description-characters-underline">Autres caractéristiques :</p>
+                    <p class="texte"><%= character.other_feature %>
+                        </p>
+                    </div>
+                    
+                    <div class="zone-description"></div>
+                         <p class="description-characters-underline">Métier :</p>
+                         <p class="texte"><%= character.job %></p>
+                 </div>
+                
+
+                    <div class="zone-description">
+                         <p class="description-characters-underline">Patronus :</p>
+                         <p class="texte"><%= character.patronus %></p>
+                     </div>
+                
+                    <!-- <div class="zone-description">
+                         <p class="description-characters-underline">Célèbre pour :</p>
+                         <p class="texte">Avoir vaincu par deux fois Voldemort et survécu par deux fois au sortilège de la Mort (ES, RM). Le cambriolage d'un coffre à Gringotts</p>
+                    </div> -->
+                </article>
+    </section>
+    <section class="characters-right harry-potter">
+
+        <img src="/images/characters/<%= character.url %>.jpg" class="characters_thumbnails" alt="<%=character.firstname %> <%=character.lastname %>" class="photo-big">
+
+    </section>
+</main>
+<!-- End of main content -->
+
+<%- include('partials/footer') %>

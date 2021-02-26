@@ -1,0 +1,40 @@
+{
+  "name": "PotterWorld",
+  "version": "1.0.0",
+  "description": "Voici le dépôt du site PotterWorld.fr",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "deploy": "cd migration && sqitch deploy"
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "build": "^0.1.4",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.5",
+    "email-validator": "^2.0.4",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "node": "^14.8.0",
+    "nodemon": "^2.0.7",
+    "pg": "^8.3.3",
+    "sanitize": "^2.1.0",
+    "sequelize": "^6.3.4"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jack-Jerry-Stark/PotterWorld.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jack-Jerry-Stark/PotterWorld/issues"
+  },
+  "homepage": "https://github.com/Jack-Jerry-Stark/PotterWorld#readme"
+}

@@ -1,0 +1,51 @@
+<%- include('partials/header') %>
+<div class="bg-login-left" id="bgLeft"></div>
+<div class="train" id="train"></div>
+<div class="bg-login-right" id="bgRight"></div>
+
+<main class="container" uk-filter="target: .js-filter">
+  <form class="formulaire-inscription">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Email</label>
+          <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Password</label>
+          <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputAddress">Nom</label>
+        <input type="text" class="form-control" id="inputAddress" placeholder="Nom">
+      </div>
+      <div class="form-group">
+        <label for="inputAddress2">Prénom</label>
+        <input type="text" class="form-control" id="inputAddress2" placeholder="Prénom">
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputCity">Pseudo</label>
+          <input type="text" class="form-control" id="inputCity" placeholder="Votre Pseudo">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputState">Votre Maison</label>
+          <select id="inputState" class="form-control">
+            <option selected>Choisissez...</option>
+            <option>Gryffondor</option>
+            <option>Serpentard</option>
+            <option>Poufsouffle</option>
+            <option>Serdaigle</option>
+          </select>
+        </div>
+        <div class="form-group">
+            </div>
+            <button type="submit" class="btn login_button_inscription">                        
+              <img src="../images/hiboux.svg" class="hiboux_ico" alt="icone hiboux blanc">
+              S'inscrire
+            </button>
+    </form>
+    <script src="../js/switchTheme.js"></script>
+</main>
+<!-- End of main content -->
+<%- include('partials/footer') %>

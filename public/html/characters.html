@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="fr">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Reset CSS -->
+        <link href="../css/reset.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+            <!-- UIkit CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.6/dist/css/uikit.min.css" />
+        <!-- Really beautiful CSS -->
+        <link href="../css/style.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../css/font-awesome.min.css">
+
+
+        <title>Potter World</title>
+    </head>
+
+    <body id="bodyList" onload="set_style_from_cookie()">
+
+
+        <header class="top">
+            <nav class="navbar navbar-expand-lg navbar-dark ">
+                <!-- start of button's menu for the mobile version -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <!-- end of button's menu for the mobile version -->
+               <a class="navbar-brand logo" href="index.html" id="logo"></a>
+            
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                      <li class="nav-item"><div class="btnSwitchTheme">
+                        <input type="checkbox" class="checkbox" id="chk" />
+                        <label class="label" for="chk">
+                            
+                            <i class="fa fa-sun-o" aria-hidden="true"></i>
+                            <i class="fa fa-moon-o" aria-hidden="true"></i>
+                            <div class="ball"></div>
+                        </label>
+                      </div></li>
+                      <li class="nav-item active">
+                          <a class="nav-link" href="index.html">Accueil <span class="sr-only">(current)</span></a>
+                      </li>
+                      
+                      <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Le monde de Potter
+                          </a>
+                          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item" href="charactersList.html">Les personnages importants</a>
+                              <a class="dropdown-item" href="charactersList.html">Tous les personnages</a>
+                              <a class="dropdown-item" href="famillyList.html">Les Familles</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="schoolList.html">Liste des écoles de magie dans le monde</a>
+                              <a class="dropdown-item" href="poudlard.html">Poudlard</a>
+                              <a class="dropdown-item" href="maisonsList.html">Les 4 Maisons</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="#">Les différentes Organisations</a>
+                              <a class="dropdown-item" href="#">Les sorts les plus connus</a>
+                              
+                          </div>
+                      </li>
+                      <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Le Potter Quiz
+                          </a>
+                          <div class="dropdown-menu dropdown-menu-right menu-potterQuiz" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">A l'école des sorciers</a>
+                                  <!-- <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="navbarDropdown">
+                                      <a class="dropdown-item" href="#">Niveau facile</a>
+                                      <a class="dropdown-item" href="#">Niveau moyen</a>
+                                      <a class="dropdown-item" href="#">Niveau difficile</a>
+                                  </div> -->
+                              <a class="dropdown-item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  href="#">La chambre des secrets</a>
+                              <a class="dropdown-item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  href="#">Le prisonnier d'Azkaban</a>
+                              <a class="dropdown-item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  href="#">La coupe de feu</a>
+                              <a class="dropdown-item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  href="#">l'Ordre du Phénix</a>
+                              <a class="dropdown-item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  href="#">Le Prince de sang-mêlé</a>
+                              <a class="dropdown-item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  href="#">Les Reliques de la mort parties 1 et 2</a>
+                          </div>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Login <i class="fa fa-user" aria-hidden="true"></i>
+                         </a>
+                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <form class="login-form">
+                                <div class="form-group">
+                                  <label for="exampleInputEmail1">Email</label>
+                                  <div class="input-group">
+
+                                  <div class="input-group-prepend">
+                                    <div class="input-group-text">@</div>
+                                  </div>
+                                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                </div>
+                                <small id="emailHelp" class="form-text text-muted">Entrez votre email de connexion.</small>
+                                </div>
+                                <div class="form-group">
+                                  <label for="exampleInputPassword1">Mot de passe</label>
+                                  <input type="password" class="form-control" id="exampleInputPassword1">
+                                </div>
+                                <div class="form-group form-check">
+                                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                  <label class="form-check-label" for="exampleCheck1">Se souvenir de moi</label>
+                                  <small id="emailHelp" class="form-text text-muted"><a href="inscription.html">Pas encore inscrit? Inscrivez-vous ici !</a></small>
+                                </div>
+                                <button type="submit" class="btn btn-orange">Se connecter</button>
+                              </form>
+                         </div>
+                    </li>
+                  </ul>
+                  <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Accio recherche" aria-label="Search">
+                    <button class="btn my-2 my-sm-0" type="submit"><i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
+                  </form>
+                  
+               
+              </div>
+          </nav>
+          
+        </header>
+        <!-- End of Header -->
+        
+        <!-- Start of main content -->
+        <main class="container_character" uk-filter="target: .js-filter">
+            <section class="characters-left">
+                <nav class="breadcrumb-content" aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a href="index.html">Accueil</a></li>
+                      <li class="breadcrumb-item"><a href="characters-list.html">Liste des personnages</a></li>
+                      <li class="breadcrumb-item active" aria-current="page">Harry Potter</li>
+                    </ol>
+                  </nav>
+                 <table class="uk-table">
+                  
+                    <thead>
+                        <tr>
+                            <th><h2 class="h2_title">Harry Potter</h2></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <ul class="list-category">
+                            <li>
+                                <a href="gentils.html" class="btn-category gentils">
+                                    <img src="../images/gentil.png" class="ico-category" alt="gentils" rel="gentils">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="phoenix-order.html" class="btn-category phoenix">
+                                    <img src="../images/phoenix.png" class="ico-category" alt="Ordre du Phoenix">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="quidditch" class="btn-category quidditch">
+                                    <img src="../images/quidditch.png" class="ico-category" alt="Quidditch">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="aurors.html" class="btn-category aurors">
+                                    <img src="../images/chapeau.png" class="ico-category" alt="Bureau des Aurors">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="patronus.html" class="btn-category patronus">
+                                    <img src="../images/cerf.png" class="ico-category" alt="Patronus du Cerf" rel="Patronus du Cerf">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="slughorn-club.html" class="btn-category slug">
+                                    <img src="../images/slug.png" class="ico-category" alt="Club de Slughorn">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="dumbledore-army.html" class="btn-category dumb-army">
+                                    <img src="../images/dumbledore-army.png" class="ico-category" alt="Armée de Dumbledore" rel="Armée de Dumbledore">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="maison-poudlard.html" class="btn-category home">
+                                    <img src="../images/gryffondor-small.png" class="ico-category" alt="Maison Gryffondor">
+                                </a>
+                            </li>
+                            </ul>
+                        </td>
+                    </tr>
+
+                        <tr>
+                            <td><h3>Informations générales</h3></td>
+                        </tr>
+                        <tr>
+                            <td class="description-characters-underline">Nom complet :</td>
+                            <td>Harry James Potter</td>
+                        </tr>
+                        <tr>
+                            <td class="description-characters-underline">Deuxième prénom :</h4></td>
+                            <td>James, le prénom de son père (Sch2, OP8)</td>
+                        </tr>
+                        <tr>
+                            <td class="description-characters-underline">Pourquoi ce nom?</td>
+                            <td>JKR dit sur son site qu’un certain Harry Potter était un horloger londonien du XIXe siècle (JKR).  
+                                <small class="citation">Citation de Sch2 : « Harry a toujours été mon prénom de garçon préféré. Si ma fille avait été un fils, il aurait été Harry Rowling. Mais je devais choisir un nom différent pour « Harry » dans les livres, car il aurait été trop cruel de le nommer comme mon propre fils. « Potter » était le nom d’une famille vivant près de chez moi lorsque j’avais sept ans. J’ai toujours aimé ce nom, je l’ai donc emprunté!».</small>
+                                Harry est le diminutif de Harold, qui fut le dernier roi saxon d’Angleterre. Il fut vaincu durant la bataille de Hastings en 1066 par Guillaume le Conquérant et fut tué d’une flèche plantée dans son œil. « Potter » signifie « potier » en anglais.</td>
+                        </tr>
+                        <tr>
+                            <td class="description-characters-underline">Date/Lieu de naissance :</td>
+                            <td>31 juillet 1980, Godric’s Hollow (ES8, AGB, RM16, RM35). JKR est aussi née un 31 juillet.</td>
+                        </tr>
+                        <tr>
+                            <td class="description-characters-underline">Décès :</td>
+                            <td>Tué par Voldemort dans la Forêt interdite puis « ressuscité » en mai 1998 (RM34, 35, 36).</td>
+                        </tr>
+                        <tr>
+                            <td class="description-characters-underline">Surnoms :</td>
+                            <td>« L'enfant qui a survécu », « Saint Potter, l’ami des Sang-de-Bourbe » (Drago [CS12]), « l’Élu » (PSM3), « Parry Otter, l’Élu » (Horace Slughorn, [PSM22]).</td>
+                        </tr>
+                        <tr>
+                            <td><h3>Famille, amis, etc...</h3></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="description-characters-underline">Type de sang:</td>
+                            <td>Sang-mêlé</td>
+                        </tr>
+                        <tr>
+                            <td class="description-characters-underline">Famille :</td>
+                            <td><a href="potter-family.html">Potter</a></td>
+                        </tr>
+                        <tr>
+                            <td class="description-characters-underline">Ancêtre :</td>
+                            <td>Ignotus Peverell (RM)</td>
+                        </tr>
+                        <tr>
+                            <td class="description-characters-underline">Père :</td>
+                            <td><a href="james-potter.html">James Potter</a></td>
+                        </tr>
+                        <tr>
+                            <td class="description-characters-underline">Mère :</td>
+                            <td><a href="lily-evans.html">Lily Evans</a></td>
+                        </tr>
+                        <tr>
+                            <td class="description-characters-underline">Grands-parents</td>
+                            <td>Mr & Mme Potter, Mr & Mme Evans</td>
+                        </tr>
+                        <tr>
+                            <td class="description-characters-underline">Oncles/Tantes</td>
+                            <td><a href="famille-dursley">Pétunia et Vernon Dursley</a></td>
+                        </tr>
+                        <tr>
+                            <td class="description-characters-underline">Frères/Soeurs :</td>
+                            <td>Néant</td>
+                        </tr>
+                        <tr>
+                            <td class="description-characters-underline">Cousins et cousines :</td>
+                            <td><a href="famille-dursley">Dudley Dursley</a></td>
+                        </tr>
+                        <tr>
+                            <td class="description-characters-underline">Époux/Épouse :</td>
+                            <td><a href="giny-weasley.html">Ginny Weasley (RM)</a></td>
+                        </tr>
+                        <tr>
+                            <td class="description-characters-underline">Enfants :</td>
+                            <td><a href="enfants-potter.html">James Sirius, Albus Severus, Lily Luna (RM/e)</a></td>
+                        </tr>
+                        <tr>
+                            <td class="description-characters-underline">Neveux/Nièces :</td>
+                            <td><a href="famille-weasley">Molly Weasley II, Lucy Weasley, Rose, Hugo, Victoire Weasley, Dominique Weasley, Louis Weasley, Fred Weasley II, Roxanne Weasley II (RM/e, BB, ITV1)</a></td>
+                        </tr>
+                        <tr>
+                            <td class="description-characters-underline">Beaux-frères/Belles-sœurs :</td>
+                            <td>Bill Weasley, Charlie Weasley, Percy Weasley, Fred Weasley, Fleur Delacour, Hermione Granger, George Weasley et Ron Weasley.</td>
+                        </tr>
+                        <tr>
+                            <td class="description-characters-underline">Parrain :</td>
+                            <td><a href="sirius-black">Sirius Black</a></td>
+                        </tr>
+                        <tr>
+                            <td class="description-characters-underline">Filleul :</td>
+                            <td>Ted Lupin (RM25)</td>
+                        </tr>
+                        <tr>
+                            <td class="description-characters-underline">Enfance :</td>
+                            <td>élevé par <a href="famille-dursley">les Dursley</a>, dont sa tante Pétunia, la sœur de sa mère, et son mari Vernon.</td>
+                        </tr>
+                        <tr>
+                            <td class="description-characters-underline">Amis :</td>
+                            <td>Meilleur ami de Ron Weasley et d’Hermione Granger (qu'il considère comme son frère et sa sœur [RM19]), ami de Luna Lovegood, ami de Neville Londubat, Seamus Finnigan et Dean Thomas, ses camarades de dortoir, les membres de l’Armée de Dumbledore, les membres de l’Ordre du Phénix, la famille Weasley, Dobby, l’elfe de maison qu’il a libéré, lui était entièrement dévoué, Hagrid fut son « parrain » pour son entrée dans le Monde Magique, s’entendait assez bien avec la plupart des élèves de Poudlard qu’il fréquentait, excepté bien sûr les Serpentard, Dumbledore était une sorte de mentor, de guide, de père de substitution.</td>
+                        </tr>
+                        <tr>
+                            <td class="description-characters-underline">Animaux de compagnie :</td>
+                            <td><a href="hedwige">Hedwige</a> (31 juillet 1991 – 27 juillet 1997).</td>
+                        </tr>
+                        <tr>
+                            <td class="description-characters-underline">Elf de maison :</td>
+                            <td>Kreattur, qu’il hérita de Sirius Black(dont il fera don à l'école Poudlard pour travailler dans les cuisines).</td>
+                        </tr>
+                        <tr>
+                            <td class="description-characters-underline">Domicile :</td>
+                            <td>un cottage à Godric’s Hollow (1980 – 31 octobre 1981), 4, Privet Drive, Little Whinging, Surrey (1er novembre 1981 – 27 juillet 1997).</td>
+                        </tr>
+                        <tr>
+                            <td class="description-characters-underline">Organistaions :</td>
+                            <td>Armée de Dumbledore, équipe de Quidditch de Gryffondor, Club de Slug, Ordre du Phénix, ministère de la Magie.</td>
+                        </tr>
+                        <tr>
+                            <td><h3>Apparences : </h3></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="description-characters-underline">Yeux :</td>
+                            <td>Ils sont d'un vert brillant, tout comme sa mère.</td>
+                        </tr>
+                        <tr>
+                            <td class="description-characters-underline">Cheveux :</td>
+                            <td>Ils sont noirs, indisciplinés et hérissés à l’arrière, les mêmes que ceux de son père.</td>
+                        </tr>
+                        <tr>
+                            <td class="description-characters-underline">Autres caractéristiques :</td>
+                            <td>Il porte des lunettes rondes, il est petit et maigre, les genoux noueux. Il a une cicatrice en forme d’éclair sur le front.
+                                <small class="citation">« Harry avait toujours été petit et maigre pour son âge (…) Harry avait un visage mince, des genoux Noueux, des cheveux noirs et des yeux d’un vert brillant. Il portait des lunettes rondes qu’il avait fallu rafistoler avec du papier collant (…) La seule chose que Harry aimait bien dans son apparence physique, c’était la fine cicatrice qu’il portait sur le front et qui avait la forme d’un éclair. » (ES2)</small>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td><h3>Compétences :</h3></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="description-characters-underline">Aptitudes :</td>
+                            <td>Il est « naturellement » joueur de Quidditch, Fourchelang, peut jeter des sortilèges sans baguette, sent la présence des autres, fait des rêves prémonitoires, est particulièrement doué en défense contre les forces du Mal. Il se révèle capable de résister au sortilège de l’Imperium et aux Vélanes. A éprouvé des difficultés apprendre l’Occlumancie.</td>
+                        </tr>
+                        <tr>
+                            <td class="description-characters-underline">Métier :</td>
+                            <td>Harry commença sa formation d’Auror à 17 ans puis devint directeur du Bureau des Aurors en 2007 (BB, JKR).</td>
+                        </tr>
+                        <tr>
+                            <td class="description-characters-underline">Compétences particulières :</td>
+                            <td>Fourchelang</td>
+                        </tr>
+                        <tr>
+                            <td class="description-characters-underline">Patronus :</td>
+                            <td>C'est un cerf (son père, Cornedrue)</td>
+                        </tr>
+                        <tr>
+                            <td class="description-characters-underline">Célèbre pour :</td>
+                            <td>Avoir vaincu par deux fois Voldemort et survécu par deux fois au sortilège de la Mort (ES, RM). Le cambriolage d'un coffre à Gringotts</td>
+                        </tr>
+                </tbody>
+            </table>
+            </section>
+            <section class="characters-right harry-potter">
+            </section>
+        </main>
+        <!-- End of main content -->
+
+        <!-- Start of footer content -->
+        <footer class="bottom">
+            <div class="bottom_content">
+
+                <ul class="nav nav-footer">
+    
+                    <!--<li class="nav-item">
+                         <div class="btnSwitchTheme">
+                            <input type="checkbox" class="checkbox" id="chk" />
+                            <label class="label" for="chk">
+                                
+                                <i class="fa fa-sun-o" aria-hidden="true"></i>
+                                <i class="fa fa-moon-o" aria-hidden="true"></i>
+                                <div class="ball"></div>
+                            </label>
+                          </div> 
+                    </li>-->
+                    <li class="nav-item">
+                        <a class="nav-link" href="legals.html">Mentions légales</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="thankx.html">Remerciements</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.youtube.com/channel/UCeiYwHlLLbtMUc8FzYK8rRA">Le BlablaCode</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="apropos.html">A propos</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="#">Déclarations de confidentialité</a>
+                    </li> -->
+                </ul>
+                    <div class="baseline-content">
+                        <small class="bottom_content__txt">PotterWorld is an unofficial Harry Potter fansite. HARRY POTTER, characters, names, and all related indicia are trademarks of Warner Bros. © 2001 – 2020. Develop by</small><a class="logo-small-link" href="https://www.jd-dev.me"><img src="../images/logo_small.png" class="logo_small" alt="J.J.R Stark"></a>
+                    </div>
+            </div>             
+        </footer>
+        <!-- End of footer content -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+      <script src="../js/themeScript.js"></script>
+      <script src="../js/switchBgList.js"></script>
+      <!-- UIkit JS -->
+      <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.6/dist/js/uikit.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.6/dist/js/uikit-icons.min.js"></script>
+
+      
+    </body>
+</html>

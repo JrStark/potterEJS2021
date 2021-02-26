@@ -1,0 +1,8 @@
+.bg_home{
+    background-image: url(../images/bg_home_sunlight.webp);
+    background-size: cover;
+    width: 100vw;
+    background-color: #003755;
+    background-repeat: no-repeat;
+    color: white!important;
+}
