@@ -17,3 +17,6 @@ Utilisation d'Illustrator pour créer un theme graphique, le rendu des pages en 
 1. Day 1 : Intégration de la Home Page en HTML 5 et CSS3. Ajout de JS pour la création d'un bouton toggle permettant de switcher entre les themes graphiques pour la Home Page.
 
 2. Pages Category et Characters : in progress...
+
+
+## Etape 3 : mise en ligne sur Heroku

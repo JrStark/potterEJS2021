@@ -77,10 +77,10 @@ CREATE TABLE IF NOT EXISTS "type" (
 );
 
 -- --------------------------------------------
--- table sort
+-- table spell
 -- --------------------------------------------
 
-CREATE TABLE IF NOT EXISTS "sort" (
+CREATE TABLE IF NOT EXISTS "spell" (
     "id" SERIAL PRIMARY KEY,
     "name" TEXT NOT NULL,
     "description_courte" TEXT NOT NULL,
@@ -112,36 +112,98 @@ CREATE TABLE IF NOT EXISTS "school" (
 -- table character
 -- --------------------------------------------
 
-CREATE TABLE IF NOT EXISTS "character" (
-    "id" SERIAL PRIMARY KEY,
-    "firstname" TEXT NOT NULL,
-    "lastname" TEXT NOT NULL,
-    "birthday" TIMESTAMP NOT NULL DEFAULT NOW(),
-    "deaththday" TIMESTAMP,
-    "surnom" TEXT NOT NULL,
-    "patronus" TEXT NOT NULL,
-    "maison" TEXT NOT NULL,
-    "school_id" INTEGER NOT NULL REFERENCES "school"("id"),
-    "blood_id" INTEGER NOT NULL REFERENCES "blood"("id"),
-    "family_id" INTEGER NOT NULL REFERENCES "family"("id"),
-    "father_id" INTEGER NOT NULL REFERENCES "character"("id"),
-    "mother_id" INTEGER NOT NULL REFERENCES "character"("id"),
-    "brother_sister" TEXT NOT NULL,
-    "cousin" TEXT NOT NULL,
-    "oncle_tante" TEXT NOT NULL,
-    "married" TEXT NOT NULL,
-    "child" TEXT NOT NULL,
-    "neveu" TEXT NOT NULL,
-    "beau_frere" TEXT NOT NULL,
-    "animal" TEXT NOT NULL,
-    "home" TEXT NOT NULL,
-    "url" TEXT NOT NULL,
-    "other_feature" TEXT NOT NULL, 
-    "job" TEXT NOT NULL,
-    "created_at" TIMESTAMP NOT NULL DEFAULT NOW(),
-    "updated_at" TIMESTAMP
-);
+-- CREATE TABLE IF NOT EXISTS "character" (
+--     "id" SERIAL PRIMARY KEY,
+--     "firstname" TEXT NOT NULL,
+--     "lastname" TEXT NOT NULL,
+--     "birthday" TIMESTAMP NOT NULL DEFAULT NOW(),
+--     "deaththday" TIMESTAMP,
+--     "surnom" TEXT NOT NULL,
+--     "patronus" TEXT NOT NULL,
+--     "maison" TEXT NOT NULL,
+--     "school_id" INTEGER NOT NULL REFERENCES "school"("id"),
+--     "blood_id" INTEGER NOT NULL REFERENCES "blood"("id"),
+--     "family_id" INTEGER NOT NULL REFERENCES "family"("id"),
+--     "father_name" INTEGER NOT NULL REFERENCES "character"("id"),
+--     "mother_name" INTEGER NOT NULL REFERENCES "character"("id"),
+--     "brother_sister" TEXT NOT NULL,
+--     "cousin" TEXT NOT NULL,
+--     "oncle_tante" TEXT NOT NULL,
+--     "married" TEXT NOT NULL,
+--     "child" TEXT NOT NULL,
+--     "neveu" TEXT NOT NULL,
+--     "beau_frere" TEXT NOT NULL,
+--     "animal" TEXT NOT NULL,
+--     "home" TEXT NOT NULL,
+--     "url" TEXT NOT NULL,
+--     "other_feature" TEXT NOT NULL, 
+--     "job" TEXT NOT NULL,
+--     "created_at" TIMESTAMP NOT NULL DEFAULT NOW(),
+--     "updated_at" TIMESTAMP
+-- );
 
+CREATE TABLE public."character"
+(
+    id integer NOT NULL DEFAULT nextval('character_id_seq'::regclass),
+    firstname text COLLATE pg_catalog."default" NOT NULL,
+    lastname text COLLATE pg_catalog."default" NOT NULL,
+    birthday timestamp without time zone NOT NULL DEFAULT now(),
+    deaththday text COLLATE pg_catalog."default",
+    surnom text COLLATE pg_catalog."default" NOT NULL,
+    patronus text COLLATE pg_catalog."default" NOT NULL,
+    maison text COLLATE pg_catalog."default" NOT NULL,
+    school_id integer NOT NULL,
+    blood_id integer NOT NULL,
+    family_id integer NOT NULL,
+    father_id integer NOT NULL,
+    mother_id integer NOT NULL,
+    brother_sister text COLLATE pg_catalog."default" NOT NULL,
+    cousin text COLLATE pg_catalog."default" NOT NULL,
+    oncle_tante text COLLATE pg_catalog."default" NOT NULL,
+    married text COLLATE pg_catalog."default" NOT NULL,
+    child text COLLATE pg_catalog."default" NOT NULL,
+    neveu text COLLATE pg_catalog."default" NOT NULL,
+    beau_frere text COLLATE pg_catalog."default" NOT NULL,
+    animal text COLLATE pg_catalog."default" NOT NULL,
+    home text COLLATE pg_catalog."default" NOT NULL,
+    url text COLLATE pg_catalog."default" NOT NULL,
+    other_feature text COLLATE pg_catalog."default" NOT NULL,
+    job text COLLATE pg_catalog."default" NOT NULL,
+    created_at timestamp without time zone NOT NULL DEFAULT now(),
+    updated_at timestamp without time zone,
+    lieu_naissance text COLLATE pg_catalog."default",
+    why_this_name text COLLATE pg_catalog."default",
+    cause_deces text COLLATE pg_catalog."default",
+    other_family text COLLATE pg_catalog."default",
+    father_name character varying(255) COLLATE pg_catalog."default",
+    mother_name character varying(255) COLLATE pg_catalog."default",
+    CONSTRAINT character_pkey PRIMARY KEY (id),
+    CONSTRAINT character_blood_id_fkey FOREIGN KEY (blood_id)
+        REFERENCES public.blood (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT character_family_id_fkey FOREIGN KEY (family_id)
+        REFERENCES public.family (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT character_father_id_fkey FOREIGN KEY (father_id)
+        REFERENCES public."character" (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT character_mother_id_fkey FOREIGN KEY (mother_id)
+        REFERENCES public."character" (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT character_school_id_fkey FOREIGN KEY (school_id)
+        REFERENCES public.school (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public."character"
+    OWNER to postgres;
 
 -- --------------------------------------------
 -- table character_has_school
