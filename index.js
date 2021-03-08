@@ -1,7 +1,7 @@
 // Premier reflexe : les variables d'environnement !
 const dotenv = require('dotenv');
 dotenv.config();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 5050;
 // le routage
 const router = require('./app/router');
 // et c'est parti pour Express !
@@ -13,11 +13,7 @@ const app = express();
 app.set('views', 'app/views');
 app.set('view engine', 'ejs');
 //app.set('views', __dirname + '/pages'); 
-<<<<<<< HEAD:index.js
-
-=======
 //app.set("models", "./app/models");
->>>>>>> schoolController:server/index.js
 // les statiques
 //app.use(express.static(__dirname + "/app/public"));
 app.use(express.static('public'));

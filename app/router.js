@@ -32,7 +32,6 @@ router.get('/character/:id', characterController.character);
 /*
 // Page des maisons de Poudlard
 router.get('/house', houseController);
-
 // Page détails d'une maison
 router.get('/house/:id', houseController);
 */
@@ -44,31 +43,22 @@ router.get('/school/:id', schoolController.school);
 /*
 // Page contenant la liste de tous les sortilèges
 router.get('/spells', spellsController);
-
 // Page du détails d'un sortilège
 router.get('/spell/:id', spellsController);
-
 // Page contenant la liste des familles
 router.get('/families', familyController);
-
 // Page contenant le détails d'une famille
 router.get('/family/:id', familyController);
-
 // Page contenant la liste des organisations
 router.get('/orgasniations', organisationController);
-
 // page détails d'une organisation
 router.get('/organisation/:id', organisation);
-
 // Partie comprenant le PotterQuiz:
-
 // page "quizz"
 router.get('/quiz/:id', quizController.quizzPage);
 router.post('/quiz/:id', quizController.quizzAnswer);
-
 // page "tags" ("sujets")
 router.get('/tags', tagController.tagList);
-
 // quizzes par tag
 router.get('/quizzes/tag/:id', quizController.listByTag);
 */
@@ -78,11 +68,8 @@ router.get('/signup', userController.signupPage);
 /*
 router.post('/signup', userController.signupAction);
 router.post('/login', userController.loginAction);
-
 router.get('/disconnect', userController.disconnect);
-
 router.get('/profile', userController.profilePage);
-
 // admin
 router.get('/admin', adminMiddleware, adminController.adminPage);
 */

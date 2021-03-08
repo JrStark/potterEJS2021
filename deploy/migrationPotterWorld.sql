@@ -138,6 +138,11 @@ CREATE TABLE IF NOT EXISTS "school" (
 --     "created_at" TIMESTAMP NOT NULL DEFAULT NOW(),
 --     "updated_at" TIMESTAMP
 -- );
+-- début de transaction
+BEGIN;
+
+--avant de créer les tables, par sécurité, on les supprime
+DROP TABLE IF EXISTS "character";
 
 CREATE TABLE public."character"
 (
@@ -173,34 +178,34 @@ CREATE TABLE public."character"
     cause_deces text COLLATE pg_catalog."default",
     other_family text COLLATE pg_catalog."default",
     father_name character varying(255) COLLATE pg_catalog."default",
-    mother_name character varying(255) COLLATE pg_catalog."default",
-    CONSTRAINT character_pkey PRIMARY KEY (id),
-    CONSTRAINT character_blood_id_fkey FOREIGN KEY (blood_id)
-        REFERENCES public.blood (id) MATCH SIMPLE
-        ON UPDATE NO ACTION
-        ON DELETE NO ACTION,
-    CONSTRAINT character_family_id_fkey FOREIGN KEY (family_id)
-        REFERENCES public.family (id) MATCH SIMPLE
-        ON UPDATE NO ACTION
-        ON DELETE NO ACTION,
-    CONSTRAINT character_father_id_fkey FOREIGN KEY (father_id)
-        REFERENCES public."character" (id) MATCH SIMPLE
-        ON UPDATE NO ACTION
-        ON DELETE NO ACTION,
-    CONSTRAINT character_mother_id_fkey FOREIGN KEY (mother_id)
-        REFERENCES public."character" (id) MATCH SIMPLE
-        ON UPDATE NO ACTION
-        ON DELETE NO ACTION,
-    CONSTRAINT character_school_id_fkey FOREIGN KEY (school_id)
-        REFERENCES public.school (id) MATCH SIMPLE
-        ON UPDATE NO ACTION
-        ON DELETE NO ACTION
-)
+    mother_name character varying(255) COLLATE pg_catalog."default"
+    -- CONSTRAINT character_pkey PRIMARY KEY (id),
+    -- CONSTRAINT character_blood_id_fkey FOREIGN KEY (blood_id)
+    --     REFERENCES public.blood (id) MATCH SIMPLE
+    --     ON UPDATE NO ACTION
+    --     ON DELETE NO ACTION,
+    -- CONSTRAINT character_family_id_fkey FOREIGN KEY (family_id)
+    --     REFERENCES public.family (id) MATCH SIMPLE
+    --     ON UPDATE NO ACTION
+    --     ON DELETE NO ACTION,
+    -- CONSTRAINT character_father_id_fkey FOREIGN KEY (father_id)
+    --     REFERENCES public."character" (id) MATCH SIMPLE
+    --     ON UPDATE NO ACTION
+    --     ON DELETE NO ACTION,
+    -- CONSTRAINT character_mother_id_fkey FOREIGN KEY (mother_id)
+    --     REFERENCES public."character" (id) MATCH SIMPLE
+    --     ON UPDATE NO ACTION
+    --     ON DELETE NO ACTION,
+    -- CONSTRAINT character_school_id_fkey FOREIGN KEY (school_id)
+    --     REFERENCES public.school (id) MATCH SIMPLE
+    --     ON UPDATE NO ACTION
+    --     ON DELETE NO ACTION
+);
 
-TABLESPACE pg_default;
+-- TABLESPACE pg_default;
 
-ALTER TABLE public."character"
-    OWNER to postgres;
+-- ALTER TABLE public."character"
+--     OWNER to postgres;
 
 -- --------------------------------------------
 -- table character_has_school
