@@ -21,20 +21,7 @@ CREATE TABLE IF NOT EXISTS "blood" (
     "updated_at" TIMESTAMP
 );
 
--- --------------------------------------------
--- table maison
--- --------------------------------------------
 
-CREATE TABLE IF NOT EXISTS "maison" (
-    "id" SERIAL PRIMARY KEY,
-    "name" TEXT,
-    "creator" TEXT,
-    "embleme" TEXT NULL,
-	"director_list" TEXT NULL,
-    "school_id" int REFERENCES school(id),
-    "created_at" TIMESTAMP DEFAULT NOW(),
-    "updated_at" TIMESTAMP
-);
 
 -- --------------------------------------------
 -- table organisation
@@ -94,7 +81,20 @@ CREATE TABLE IF NOT EXISTS "school" (
     "updated_at" TIMESTAMP
 );
 
+-- --------------------------------------------
+-- table maison
+-- --------------------------------------------
 
+CREATE TABLE IF NOT EXISTS "maison" (
+    "id" SERIAL PRIMARY KEY,
+    "name" TEXT,
+    "creator" TEXT,
+    "embleme" TEXT NULL,
+	"director_list" TEXT NULL,
+    "school_id" int REFERENCES school(id),
+    "created_at" TIMESTAMP DEFAULT NOW(),
+    "updated_at" TIMESTAMP
+);
 -- --------------------------------------------
 -- table character
 -- --------------------------------------------

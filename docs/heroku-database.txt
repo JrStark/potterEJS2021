@@ -1,0 +1,14 @@
+Heroku Database : 
+
+ADMINISTRATION
+
+
+
+
+Host : ec2-54-73-68-39.eu-west-1.compute.amazonaws.com
+Database : d4s9uu7d6fqc0v
+User : jbrjuebkahnjvb
+Port : 5432
+Password : 7698c5597529615fcdf84caeae69d319ed67bf09eda0884a87328f14764b0814
+URI : postgres://jbrjuebkahnjvb:7698c5597529615fcdf84caeae69d319ed67bf09eda0884a87328f14764b0814@ec2-54-73-68-39.eu-west-1.compute.amazonaws.com:5432/d4s9uu7d6fqc0v
+Heroku CLI : heroku pg:psql postgresql-triangular-31416 --app potterword-ejs

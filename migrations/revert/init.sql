@@ -2,46 +2,46 @@
 
 BEGIN;
 
-DROP TABLE quiz_has_tag;
+DROP TABLE IF EXISTS quiz_has_tag CASCADE;
 
-DROP TABLE tag;
+DROP TABLE tag CASCADE;
 
-DROP TABLE question;
+DROP TABLE question CASCADE;
 
-DROP TABLE quiz;
+DROP TABLE quiz CASCADE;
 
-DROP TABLE user;
+DROP TABLE "user" CASCADE;
 
-DROP TABLE answer;
+DROP TABLE answer CASCADE;
 
-DROP TABLE "level";
+DROP TABLE "level" CASCADE;
 
-DROP TABLE character_has_family;
+DROP TABLE character_has_family CASCADE;
 
-DROP TABLE school_has_maison;
+DROP TABLE school_has_maison CASCADE;
 
-DROP TABLE character_has_friend;
+DROP TABLE character_has_friend CASCADE;
 
-DROP TABLE character_has_organisation;
+DROP TABLE character_has_organisation CASCADE;
 
-DROP TABLE character_has_maison;
+DROP TABLE character_has_maison CASCADE;
 
-DROP TABLE character_has_school;
+DROP TABLE character_has_school CASCADE;
 
-DROP TABLE "character";
+DROP TABLE "character" CASCADE;
 
-DROP TABLE school;
+DROP TABLE maison CASCADE;
 
-DROP TABLE spell;
+DROP TABLE school CASCADE;
 
-DROP TABLE family;
+DROP TABLE spell CASCADE;
 
-DROP TABLE organisation;
+DROP TABLE family CASCADE;
 
-DROP TABLE maison;
+DROP TABLE organisation CASCADE;
 
-DROP TABLE blood;
+DROP TABLE blood CASCADE;
 
-DROP TABLE friend;
+DROP TABLE friend CASCADE;
 
 COMMIT;
