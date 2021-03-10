@@ -7,7 +7,7 @@ const characterController = {
     // Et on définit le callback, avec une erreur potentielle, et les characters demandées
 
     const characters = await Character.getAllCharacters();
-    response.render('characters', {characters} );
+    response.render('characters');
     // Character.getAllCharacters( (err, characters) => {
     //   // traitement d'erreur
     //   if (err) {
