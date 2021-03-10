@@ -9,7 +9,7 @@ const express = require('express');
 const app = express();
 
 // le routage
-const router = require('./router');
+const router = require('router');
 // et c'est parti pour Express !
 
 //const session = require('express-session');
@@ -17,7 +17,7 @@ const router = require('./router');
 const PORT = process.env.PORT || 5050;
 
 // réglages views
-app.set('views', './views');
+app.set('views', 'views');
 app.set('view engine', 'ejs');
 //app.set('views', __dirname + '/pages'); 
 //app.set("models", "./app/models");
