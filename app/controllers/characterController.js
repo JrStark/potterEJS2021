@@ -2,21 +2,24 @@ const Character = require('../models/Character');
 
 const characterController = {
     // méthode pour la page d'accueil
-  characters: (request, response) => {
+  characters: async (request, response) => {
     // on appelle la méthode pour récupérer les characters,
     // Et on définit le callback, avec une erreur potentielle, et les characters demandées
-    Character.getAllCharacters( (err, characters) => {
-      // traitement d'erreur
-      if (err) {
-        console.error(err);
-        // on affiche l'erreur, telle qu'elle, dans le navigateur
-        response.status(500).send(err);
-      } else {
 
-        // pas d'erreur => on envoie les character dans la view !
-        response.render('characters', {characters} );
-      }
-    });
+    const characters = await Character.getAllCharacters();
+    response.render('characters', {characters} );
+    // Character.getAllCharacters( (err, characters) => {
+    //   // traitement d'erreur
+    //   if (err) {
+    //     console.error(err);
+    //     // on affiche l'erreur, telle qu'elle, dans le navigateur
+    //     response.status(500).send(err);
+    //   } else {
+
+    //     // pas d'erreur => on envoie les character dans la view !
+    //     response.render('characters', {characters} );
+    //   }
+    // });
 
   },
 
