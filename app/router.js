@@ -1,18 +1,21 @@
 const { Router } = require('express');
 
 // importer les controllers
-const mainController = require('controllers/mainController');
-const characterController = require('controllers/characterController');
-// const houseController = require('controllers/houseController.js');
-// const familyController = require('controllers/familyController.js');
-const schoolController = require('controllers/schoolController.js');
+const mainController = require('./controllers/mainController');
+const characterController = require('./controllers/characterController');
+// const houseController = require('./controllers/houseController.js');
+// const familyController = require('./controllers/familyController.js');
+const schoolController = require('./controllers/schoolController');
+const { validateBody } = require('./services/validator');
 
-// const organisationController = require('controllers/organisationController.js');
-// const spellsController = require('controllers/spellsController.js');
-// const quizController = require('controllers/quizController');
-// const tagController = require('controllers/tagController');
-const userController = require('controllers/userController');
-// const adminController = require('controllers/adminController');
+//const postSchema = require('./schemas/postSchema');
+
+// const organisationController = require('./controllers/organisationController.js');
+// const spellsController = require('./controllers/spellsController.js');
+// const quizController = require('./controllers/quizController');
+// const tagController = require('./controllers/tagController');
+const userController = require('./controllers/userController');
+// const adminController = require('./controllers/adminController');
 
 // importer les middlewares
 //const adminMiddleware = require('middlewares/admin');
@@ -28,7 +31,7 @@ router.get('/', mainController.homePage);
 router.get('/characters', characterController.characters );
 
 // Page Character Details
-router.get('/character/:id', characterController.character);
+router.get('/character/:id(\\d+)', characterController.character);
 /*
 // Page des maisons de Poudlard
 router.get('/house', houseController);
@@ -73,5 +76,6 @@ router.get('/profile', userController.profilePage);
 // admin
 router.get('/admin', adminMiddleware, adminController.adminPage);
 */
+router.use(mainController.error404);
 
 module.exports = router;

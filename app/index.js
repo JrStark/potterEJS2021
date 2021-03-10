@@ -17,15 +17,15 @@ const router = require('./router');
 const PORT = process.env.PORT || 5050;
 
 // réglages views
-app.set('views', 'views');
+app.set('views', './views');
 app.set('view engine', 'ejs');
 //app.set('views', __dirname + '/pages'); 
 //app.set("models", "./app/models");
 // les statiques
 //app.use(express.static(__dirname + "/app/public"));
-app.use(express.static('public'));
+app.use(express.static('../public'));
 // on rajoute la gestion des POST body
-app.use(express.urlencoded({extended: true}));
+//app.use(express.urlencoded({extended: true}));
 
 app.use('/v1', router);
 // et on rajoute la gestion des sessions
@@ -41,3 +41,10 @@ app.use('/v1', router);
 // app.use(userMiddleware);
 // lancement du serveur
 app.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`));
+
+// toutes les promesses qu'on n'entoure pas d'un try/catch seront automatiquement stoppées ici si elles sont rejetées
+// NB : DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process
+process.on('unhandledRejection', (err) => {
+  console.log('Interception d\'un rejet de promesse');
+  console.error(err);
+});
