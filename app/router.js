@@ -1,21 +1,21 @@
 const { Router } = require('express');
 
 // importer les controllers
-const mainController = require('app/controllers/mainController');
-const characterController = require('app/controllers/characterController');
-// const houseController = require('app/controllers/houseController.js');
-// const familyController = require('app/controllers/familyController.js');
-const schoolController = require('app/controllers/schoolController.js');
+const mainController = require('controllers/mainController');
+const characterController = require('controllers/characterController');
+// const houseController = require('controllers/houseController.js');
+// const familyController = require('controllers/familyController.js');
+const schoolController = require('controllers/schoolController.js');
 
-// const organisationController = require('app/controllers/organisationController.js');
-// const spellsController = require('app/controllers/spellsController.js');
-// const quizController = require('app/controllers/quizController');
-// const tagController = require('app/controllers/tagController');
-const userController = require('app/controllers/userController');
-// const adminController = require('app/controllers/adminController');
+// const organisationController = require('controllers/organisationController.js');
+// const spellsController = require('controllers/spellsController.js');
+// const quizController = require('controllers/quizController');
+// const tagController = require('controllers/tagController');
+const userController = require('controllers/userController');
+// const adminController = require('controllers/adminController');
 
 // importer les middlewares
-//const adminMiddleware = require('app/middlewares/admin');
+//const adminMiddleware = require('middlewares/admin');
   
 const router = Router();
 
