@@ -1,6 +1,6 @@
 const mainController = {
   homePage: (request, response) => {
-      response.render('home');
+      response.render('home.ejs');
   },
 
   notFound: (req, res) => {
