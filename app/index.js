@@ -4,18 +4,18 @@ if (!process.env.NODE_ENV || process.env.NODE_ENV !== 'production') {
 }
 
 // Premier réflexe : les variables d'environnement !
-const dotenv = require('dotenv');
-dotenv.config();
+// const dotenv = require('dotenv');
+// dotenv.config();
 const PORT = process.env.PORT || 5050;
 // le routage
-const router = require('./app/router');
+const router = require('./router');
 // et c'est parti pour Express !
 const express = require('express');
 //const session = require('express-session');
 const app = express();
 
 // réglages views
-app.set('views', 'app/views');
+app.set('views', './views');
 app.set('view engine', 'ejs');
 //app.set('views', __dirname + '/pages'); 
 //app.set("models", "./app/models");
