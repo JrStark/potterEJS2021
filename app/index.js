@@ -2,17 +2,19 @@
 if (!process.env.NODE_ENV || process.env.NODE_ENV !== 'production') {
   require('dotenv').config();
 }
-
+const express = require('express');
 // Premier réflexe : les variables d'environnement !
 // const dotenv = require('dotenv');
 // dotenv.config();
-const PORT = process.env.PORT || 5050;
+const app = express();
+
 // le routage
 const router = require('./router');
 // et c'est parti pour Express !
-const express = require('express');
+
 //const session = require('express-session');
-const app = express();
+
+const PORT = process.env.PORT || 5050;
 
 // réglages views
 app.set('views', './views');
@@ -25,6 +27,7 @@ app.use(express.static('public'));
 // on rajoute la gestion des POST body
 app.use(express.urlencoded({extended: true}));
 
+app.use('/v1', router);
 // et on rajoute la gestion des sessions
 
 // app.use(session({
@@ -36,9 +39,5 @@ app.use(express.urlencoded({extended: true}));
 // et hop, notre middleware magique
 // const userMiddleware = require('./app/middlewares/user');
 // app.use(userMiddleware);
-
-
-app.use('/v1', router);
-
 // lancement du serveur
 app.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`));

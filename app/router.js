@@ -1,4 +1,4 @@
-const express = require('express');
+const { Router } = require('express');
 
 // importer les controllers
 const mainController = require('./controllers/mainController');
@@ -17,7 +17,7 @@ const userController = require('./controllers/userController');
 // importer les middlewares
 //const adminMiddleware = require('./middlewares/admin');
   
-const router = express.Router();
+const router = Router();
 
 // page d'accueil
 router.get('/', mainController.homePage);
