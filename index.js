@@ -3,7 +3,7 @@ if (!process.env.NODE_ENV || process.env.NODE_ENV !== 'production') {
   require('dotenv').config();
 }
 
-// Premier reflexe : les variables d'environnement !
+// Premier réflexe : les variables d'environnement !
 const dotenv = require('dotenv');
 dotenv.config();
 const PORT = process.env.PORT || 5050;
