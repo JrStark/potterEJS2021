@@ -1,5 +1,0 @@
-%syntax-version=1.0.0
-%project=potterworld
-%uri=https://github.com/JR-Stark/potterEJS2021
-
-migrationPotterWorld 2021-02-25T08:45:13Z Jerry <jerry.dumont@outlook.fr> # migration de la bdd potterWorld
