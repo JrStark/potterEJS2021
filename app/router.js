@@ -1,4 +1,4 @@
-const { Router } = require('express');
+const express = require('express');
 
 // importer les controllers
 const mainController = require('./controllers/mainController');
@@ -20,7 +20,7 @@ const userController = require('./controllers/userController');
 // importer les middlewares
 //const adminMiddleware = require('middlewares/admin');
   
-const router = Router();
+const router = express.Router();
 
 // page d'accueil
 router.get('/', mainController.homePage);
@@ -76,6 +76,6 @@ router.get('/profile', userController.profilePage);
 // admin
 router.get('/admin', adminMiddleware, adminController.adminPage);
 */
-router.use(mainController.error404);
+router.use('/404', mainController.notFound);
 
 module.exports = router;
