@@ -12,6 +12,11 @@ const Character = {
             const characters = data.rows;
             callback(err, characters );
         });
+
+        // getAllCharacters: async () => {
+        //     // 1. On écrit la requête
+        //     const sql = await client.query(`SELECT * FROM character`);
+        //     return sql.rows;
     },
 
 getCharacterById: (id, callback) => {

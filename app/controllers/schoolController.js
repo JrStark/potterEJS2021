@@ -1,26 +1,30 @@
 const School = require('../models/School');
 
 const schoolController = {
-    // méthode pour la page d'accueil
-  schools: (request, response) => {
-    // on appelle la méthode pour récupérer les schools,
-    // Et on définit le callback, avec une erreur potentielle, et les schools demandées
-    School.getAllSchools( (err, schools) => {
-      // traitement d'erreur
-      if (err) {
-        console.error(err);
-        // on affiche l'erreur, telle qu'elle, dans le navigateur
-        response.status(500).send(err);
-      } else {
+    // méthode pour la page des ecoles
+    schools: async () => {
+      // 1. On écrit la requête
+      const sql = await client.query(`SELECT * FROM school`);
+      return sql.rows;
+  // schools: (request, response) => {
+  //   // on appelle la méthode pour récupérer les schools,
+  //   // Et on définit le callback, avec une erreur potentielle, et les schools demandées
+  //   School.getAllSchools( (err, schools) => {
+  //     // traitement d'erreur
+  //     if (err) {
+  //       console.error(err);
+  //       // on affiche l'erreur, telle qu'elle, dans le navigateur
+  //       response.status(500).send(err);
+  //     } else {
 
-        // pas d'erreur => on envoie les school dans la view !
-        response.render('schools', {schools} );
-      }
-    });
+  //       // pas d'erreur => on envoie les school dans la view !
+  //       response.render('schools', {schools} );
+  //     }
+  //   });
 
   },
 
-  // méthode pour la page article
+  // méthode pour la page d'une ecole
   school: (request, response, next) => {
     // on récupère l'id de l'article cible dans l'url
     const schoolId = request.params.id;
