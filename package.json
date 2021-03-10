@@ -4,8 +4,8 @@
   "description": "Voici le dépôt du site PotterWorld.fr",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
+    "start": "node data/import.js && node app/index.js",
+    "dev": "nodemon app/index.js",
     "deploy": "cd migration && sqitch deploy"
   },
   "directories": {
