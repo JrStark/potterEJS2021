@@ -14,7 +14,7 @@ const { Pool } = require('pg');
 
 let clientPg;
 if (process.env.NODE_ENV && process.env.NODE_ENV === "production") { // prod
-    clientPg = new Pool(connectionString: process.env.DATABASE_URL);
+    clientPg = new Pool(process.env.DATABASE_URL);
 } else { // développement
     clientPg = new Pool();
 }
