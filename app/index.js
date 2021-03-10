@@ -9,7 +9,7 @@ const express = require('express');
 const app = express();
 
 // le routage
-const router = require('router');
+const router = require('./router');
 // et c'est parti pour Express !
 
 //const session = require('express-session');
