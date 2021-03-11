@@ -29,7 +29,7 @@ const PORT = process.env.PORT || 5050;
 // on rajoute la gestion des POST body
 //app.use(express.urlencoded({extended: true}));
 
-app.use('/v1', router);
+app.use(router);
 // et on rajoute la gestion des sessions
 
 // app.use(session({
