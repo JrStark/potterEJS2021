@@ -28,10 +28,10 @@ router.get('/', mainController.homePage);
 // pages liées à PotterWorld et son wiki : 
 
 // Liste de tous les personnages
-router.get('/v1/characters', characterController.characters );
+router.get('/characters', characterController.characters );
 
 // Page Character Details
-router.get('/v1/character/:id(\\d+)', characterController.character);
+router.get('/character/:id(\\d+)', characterController.character);
 /*
 // Page des maisons de Poudlard
 router.get('/house', houseController);
@@ -39,8 +39,8 @@ router.get('/house', houseController);
 router.get('/house/:id', houseController);
 */
 //Page des écoles de magie dans le monde
-router.get('/v1/schools', schoolController.schools);
-router.get('/v1/school/:id', schoolController.school);
+router.get('/schools', schoolController.schools);
+router.get('/school/:id', schoolController.school);
 //Page de détails d'une école de magie
 //router.get('/school/id:', schoolController);
 /*
