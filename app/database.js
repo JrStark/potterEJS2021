@@ -25,4 +25,3 @@ if (process.env.NODE_ENV && process.env.NODE_ENV === "production") { // prod
 }
 
 module.exports = clientPg;
-module.exports = clientPg;
