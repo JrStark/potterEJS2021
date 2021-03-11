@@ -1,57 +1,57 @@
 //const tableName = 'character';
 const db = require('../database');
 
-// const Character = {
-//     getAllCharacters: (callback) => {
-//         // 1. On écrit la requête
-//         const sql = `SELECT * FROM character`;
+const Character = {
+    getAllCharacters: (callback) => {
+        // 1. On écrit la requête
+        const sql = `SELECT * FROM character`;
 
-//         // 2. On exécute la requête
-//         db.query( sql, (err, data) => {
-//             // 3. passer le resultat au callback
-//             const characters = data.rows;
-//             callback(err, characters );
-//         });
-//     },
+        // 2. On exécute la requête
+        db.query( sql, (err, data) => {
+            // 3. passer le resultat au callback
+            const characters = data.rows;
+            callback(err, characters );
+        });
+    },
 
-//     getCharacterById: (id, callback) => {
-//         const sql = `SELECT * FROM "character" WHERE "id" = $1;`;
-//         const values = [id];
-//         db.query( sql, values, (err, data) => {
-//             // 3. transmetrte les infos au callback
-//             if (err) {
-//                 console.log(err);
-//             }
-//             const character = data.rows[0];
-//             callback( err, character );
-//         });
-// }
-class Character {
-    constructor(data = {}) {
-        //super(data);
-        for (const prop in data) {
-            this[prop] = data[prop];
-        }
-      }
-        static async getAllCharacters() {
-            try{  
-                const sql =  await db.query(`SELECT * FROM character`);
-                  return sql.rows;
-                } catch (error) {
-                  console.log(error);
-                  res.status(500).json('500');
-                }
-              }
+    getCharacterById: (id, callback) => {
+        const sql = `SELECT * FROM "character" WHERE "id" = $1;`;
+        const values = [id];
+        db.query( sql, values, (err, data) => {
+            // 3. transmetrte les infos au callback
+            if (err) {
+                console.log(err);
+            }
+            const character = data.rows[0];
+            callback( err, character );
+        });
+}
+// class Character {
+//     constructor(data = {}) {
+//         //super(data);
+//         for (const prop in data) {
+//             this[prop] = data[prop];
+//         }
+//       }
+//         static async getAllCharacters() {
+//             try{  
+//                 const sql =  await db.query(`SELECT * FROM character`);
+//                   return sql.rows;
+//                 } catch (error) {
+//                   console.log(error);
+//                   res.status(500).json('500');
+//                 }
+//               }
 
-        static async getCharacterById(characterId) {
-            try{  
-                const character =  await db.query(`SELECT * FROM character WHERE "id" = $1`, [characterId]);
-                return character.rows[0];
-                } catch (error) {
-                    console.log(error);
-                    res.status(500).json('500');
-                }
-              }
+//         static async getCharacterById(characterId) {
+//             try{  
+//                 const character =  await db.query(`SELECT * FROM character WHERE "id" = $1`, [characterId]);
+//                 return character.rows[0];
+//                 } catch (error) {
+//                     console.log(error);
+//                     res.status(500).json('500');
+//                 }
+//               }
     
     // getTypes: (callback) => {
     //     // on execute qui prend un certain temps
