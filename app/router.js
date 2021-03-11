@@ -23,7 +23,7 @@ const userController = require('./controllers/userController');
 const router = express.Router();
 
 // page d'accueil
-router.get('/', mainController.homePage);
+router.get('/v1', mainController.homePage);
 
 // pages liées à PotterWorld et son wiki : 
 

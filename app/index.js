@@ -7,6 +7,8 @@ const express = require('express');
 // const dotenv = require('dotenv');
 // dotenv.config();
 const app = express();
+const bodyParser  = require ('body-parser');
+
 app.set('views', './app/views');
 app.set('view engine', 'ejs');
 //app.set('views', __dirname + './views'); 
