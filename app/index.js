@@ -7,13 +7,13 @@ const express = require('express');
 // const dotenv = require('dotenv');
 // dotenv.config();
 const app = express();
-app.set('views', './views');
+app.set('views', './app/views');
 app.set('view engine', 'ejs');
-//app.set('views', __dirname + '/pages'); 
-//app.set("models", "./app/models");
+//app.set('views', __dirname + './views'); 
+app.set("models", "./models");
 // les statiques
 //app.use(express.static(__dirname + "/app/public"));
-app.use(express.static('../public'));
+app.use(express.static('./public'));
 // le routage
 const router = require('./router');
 // et c'est parti pour Express !

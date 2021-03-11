@@ -1,6 +1,7 @@
 const mainController = {
-  homePage: (request, response) => {
-      response.render('home.ejs');
+  homePage: async (req, res) => {
+    // on fait appel à notre modèle
+    res.render('home');
   },
 
   notFound: (req, res) => {
