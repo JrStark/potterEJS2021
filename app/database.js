@@ -15,10 +15,14 @@ const { Pool } = require('pg');
 let clientPg;
 if (process.env.NODE_ENV && process.env.NODE_ENV === "production") { // prod
     clientPg = new Pool({
-        connectionString: process.env.DATABASE_URL
+        connectionString: process.env.DATABASE_URL,
+    ssl: {
+        rejectUnauthorized: false
+    }
     });
 } else { // développement
     clientPg = new Pool();
 }
 
+module.exports = clientPg;
 module.exports = clientPg;
