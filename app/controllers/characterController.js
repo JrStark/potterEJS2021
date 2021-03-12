@@ -64,7 +64,7 @@ const characterController = {
           next();
         } else {
           // on a les infos, on les transmet à la view
-          response.render('character', {character});
+          response.render('character2', {character});
         }
 
       }
