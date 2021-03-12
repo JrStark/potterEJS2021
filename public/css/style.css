@@ -172,15 +172,15 @@ body.night{
     position: fixed;
     transition: background 5s linear;
 } 
-.top{
-    height: 10vh;
+.top {
+    height: 10%;
     width: 100%;
-    padding: 0 2rem;
+    padding: 2rem;
     z-index: 4;
-    position: absolute;
-    top: 1rem;
-    left: 0;
-    right: 0;
+    /* position: absolute; */
+    /* top: 1rem; */
+    /* left: 0; */
+    /* right: 0; */
 }
 
 .mr-auto, .mx-auto{
@@ -870,7 +870,7 @@ text-shadow: 1px 1px 2px #000000;
 
 /* CHARCATER DETAILS PAGE */
 
-.entete_character{
+.entete-character{
     width: 100%;
     display: flex;
     justify-content: space-between;
