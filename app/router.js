@@ -31,7 +31,7 @@ router.get('/', mainController.homePage);
 router.get('/characters', characterController.characters );
 
 // Page Character Details
-router.get('/character/:id(\\d+)', characterController.character);
+router.get('/character2/:id(\\d+)', characterController.character);
 /*
 // Page des maisons de Poudlard
 router.get('/house', houseController);
