@@ -26,7 +26,6 @@ getSchoolById: (id, callback) => {
         callback( err, school );
     });
 }
-
 };
 
 
