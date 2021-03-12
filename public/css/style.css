@@ -530,6 +530,7 @@ text-shadow: 1px 1px 2px #000000;
     justify-content: space-between;
     align-items: flex-start;
     background: rgba(255, 255, 255, 0.9);
+    color: #000000;
 } 
 
 .list-group{
@@ -886,9 +887,9 @@ text-shadow: 1px 1px 2px #000000;
 }
 
 .left-character, .right_character{
-    width: 48%;
+    width: 21%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .container_list__head{
