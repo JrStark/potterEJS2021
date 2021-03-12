@@ -313,10 +313,11 @@ text-shadow: 1px 1px 2px #000000;
     padding: 2rem;
     max-width: 100vw;
     z-index: 3;
-    position: absolute;
+    /*position: absolute;*/
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 .home_content {
@@ -516,20 +517,20 @@ text-shadow: 1px 1px 2px #000000;
     height: 100%;
     max-width: 150px;
 }*/
-.container_list{
-    margin: 5rem auto;
-    padding: 0 2rem;
-    color: black;
+ .container_list, .container_character{
+    height: 100vh;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    flex-direction: row;
+    margin: 0!important;
+    padding: 2rem;
+    max-width: 100vw;
     z-index: 3;
-    position: absolute;
-    top: 10%;
+    /*position: absolute;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
     background: rgba(255, 255, 255, 0.9);
-}
+} 
 
 .list-group{
     width: 20%;
@@ -869,18 +870,25 @@ text-shadow: 1px 1px 2px #000000;
 
 /* CHARCATER DETAILS PAGE */
 
-.container_character{
-    margin: 5rem auto;
-    padding: 0 2rem;
-    color: black;
+.entete_character{
     width: 100%;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     flex-direction: row;
     z-index: 3;
-    position: absolute;
-    top: 10%;
+}
+
+.character-name{
+    color: black;
+    font-size: 2rem;
+    width: 100%;
+}
+
+.left-character, .right_character{
+    width: 48%;
+    display: flex;
+    justify-content: center;
 }
 
 .container_list__head{
